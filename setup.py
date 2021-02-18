@@ -1,15 +1,15 @@
 import io
 import os
 from setuptools import setup
-from pypdfbookmark.__version__ import VERSION
+from pdfmerger.__version__ import VERSION
 
 # Package meta-data.
-NAME = "pypdfbookmark"
+NAME = "pdfmerger"
 DESCRIPTION = "A small python package to merge and bookmark PDF files based on PyPDF2"
-URL = "https://github.com/northwestwitch/pypdfbookmark"
+URL = "https://github.com/northwestwitch/pdfmerger"
 EMAIL = "rasi.chiara@gmail.com"
 AUTHOR = "Chiara Rasi"
-KEYWORDS = ["PDF", "PyPDF2", "merge", "concatenate", "bookmark"]
+KEYWORDS = ["PDF", "PyPDF2", "reportlab", "merge", "concatenate", "bookmark", "footer", "name"]
 LICENSE = "MIT"
 
 with open("README.md", "r", encoding="utf-8") as fh:
@@ -58,7 +58,7 @@ setuptools.setup(
     ],
     python_requires=">=3.6",
     entry_points={
-        "console_scripts": ["pdfmerger = pypdfbookmark.pypdfbookmark:main"],
+        "console_scripts": ["pdfmerger = pdfmerger.pdfmerger:main"],
     },
     install_requires=REQUIRED,
 )
