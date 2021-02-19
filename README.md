@@ -1,9 +1,9 @@
 # pdfmerger
 A small python package to merge and bookmark PDF files based on PyPDF2 and reportlab.
 
-Allows you to merge a list of PDF files while preserving their original name. In fact the file name of each merged file (without extension) will be written on top of each merged file.
+Allows you to **merge a list of PDF files while preserving their original name**. In fact the file name of each merged file (without extension) will be written on top of each merged file.
 
-Creates also bookmarks to the original files.
+Creates also **bookmarks** to the original files.
 
 ## Installation
 Requires python>=3.6.
