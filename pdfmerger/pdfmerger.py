@@ -8,28 +8,39 @@ import tempfile
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import letter
 
+
 def create_watermark(text):
     """Add a string of text to a PDF file"""
     (width, height) = letter
     packet = io.BytesIO()
     can = canvas.Canvas(packet, pagesize=letter)
-    can.setFont('Helvetica', 15)
+    can.setFont("Helvetica", 15)
     can.drawCentredString(width / 2.0, width + 120, f" ## {text} ##")
     can.save()
     # move to the beginning of the StringIO buffer
     packet.seek(0)
     return packet
 
+
 def validate_infiles(infiles):
     """Checks that each privided file exists on disk"""
     for afile in infiles:
-        if os.path.isfile(afile):
-            continue
-        click.echo(f"Incorrect path to file: {afile}")
-        raise click.Abort()
+        if os.path.isfile(afile) is False:
+            click.echo(f"Incorrect path to file: {afile}")
+            raise click.Abort()
+        if afile.endswith(".pdf") is False:
+            click.echo(f"Incorrect file format: {afile}")
+            raise click.Abort()
+
 
 @click.command()
-@click.option('--infile', '-f', required=True, multiple=True, help="Path to one infile, repeat for multiple files")
+@click.option(
+    "--infile",
+    "-f",
+    required=True,
+    multiple=True,
+    help="Path to one infile, repeat for multiple files",
+)
 @click.option(
     "--outfolder",
     type=click.Path(exists=True),
@@ -48,7 +59,7 @@ def validate_infiles(infiles):
 def concatenate(infile, outfolder, outfile):
     """Concatenate all PDF files in a folder and add bookmarks and file watermarks containing with original PDF name"""
 
-    validate_infiles(infile) # infile is actually a list of files
+    validate_infiles(infile)  # infile is actually a list of files
 
     # Create a list of tuples consisting in path to PDF with corresponding bookmark (file) name.
     # Example: [('pdfmerger/demo/pdf1.pdf', 'pdf1'), ('pdfmerger/demo/pdf2.pdf', 'pdf2')
