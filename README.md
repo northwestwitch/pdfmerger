@@ -36,6 +36,6 @@ Options:
 
 Example:
 
-`pdfmerge --infile infile1.pdf --infile infile2.pdf .. (--outfolder outfolder --outfile outfile.pdf)`
+`pdfmerge --orientation landscape --infile infile1.pdf --infile infile2.pdf .. (--outfolder outfolder --outfile outfile.pdf)`
 
 The demo folder contains [3 test files](https://github.com/northwestwitch/pdfmerger/tree/master/pdfmerger/demo) that you could test the program with.
