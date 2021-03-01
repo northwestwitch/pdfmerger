@@ -22,12 +22,16 @@ pip install -e .
 ```
 
 ## Usage
-
 ```
-Command line options:
-  -f, --infile TEXT  Path to one infile, repeat for multiple files  [required]
-  --outfolder PATH   Path to destination outfile [optional]
-  --outfile TEXT     Name of destination outfile [optional]
+Options:
+  -f, --infile TEXT               Path to one infile, repeat for multiple
+                                  files  [required]
+
+  --orientation [portrait|landscape]
+                                  Orientation of initial PDF files  [required]
+  --outfolder PATH                Path to destination outfile
+  --outfile TEXT                  Name of destination outfile
+  --help                          Show this message and exit.
 ```
 
 Example:
