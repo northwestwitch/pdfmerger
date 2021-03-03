@@ -125,12 +125,12 @@ def concatenate_files(merged, filepaths_n_filenames):
     default="pdfmerger_out.pdf",
 )
 @click.option(
-    "--add-filenames",
+    "--write-filenames",
     default=False,
     is_flag=True,
     help="Write original file names on the pages before merging",
 )
-def concatenate(infile, orientation, outfolder, outfile, add_filenames):
+def concatenate(infile, orientation, outfolder, outfile, write_filenames):
     """Concatenate all PDF files in a folder and add bookmarks and file watermarks containing with original PDF name"""
 
     validate_infiles(infile)  # infile is actually a list of files
@@ -144,7 +144,7 @@ def concatenate(infile, orientation, outfolder, outfile, add_filenames):
     # merge PDF files into one, with bookmarks
     merged = PdfFileMerger()
     click.echo("Merging files, this might take a while..\n")
-    if add_filenames:  # Add watermarks with file name to the files before merging them
+    if write_filenames:  # Add watermarks with file name to the files before merging them
         merged = concatenate_files_with_watermark(merged, filepaths_n_filenames, orientation)
     else:  # just merge the files in the given order
         merged = concatenate_files(merged, filepaths_n_filenames)
