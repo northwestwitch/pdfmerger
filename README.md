@@ -28,7 +28,7 @@ northwestwitch/pdfmerger --orientation landscape \
 --outfolder /home/pdfmerger/data (--outfile outfilename.pdf)
 ```
 
-## Installation
+## Installing the program locally
 Requires python>=3.6.
 
 Clone this repository with the command:
