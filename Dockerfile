@@ -20,4 +20,5 @@ RUN pip install -e .
 RUN chown worker:worker -R /home/worker
 RUN mkdir /home/pdfmerger/data
 USER worker
-ENTRYPOINT ["/bin/bash"]
+ENTRYPOINT ["pdfmerger"]
+CMD ["$@"]
