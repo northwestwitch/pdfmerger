@@ -24,7 +24,7 @@ Example command to pull the image from Docker Hub and execute the program direct
 docker run -d --rm \
 -v /home/username/documents:/home/pdfmerger/data \
 northwestwitch/pdfmerger --orientation landscape \
--f /home/pdfmerger/data/infile1.pdf -f /home/pdfmerger/data/infile2.pdf \
+-f /home/pdfmerger/data/infile1.pdf -f /home/pdfmerger/data/infile2.pdf .. \
 --outfolder /home/pdfmerger/data (--outfile outfilename.pdf)
 ```
 
