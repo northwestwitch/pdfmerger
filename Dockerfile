@@ -7,8 +7,8 @@ LABEL about.documentation="https://github.com/northwestwitch/pdfmerger"
 LABEL about.tags="pdf,merge,bookmark,PyPDF2,reportlab,click,orientation,watermark"
 
 RUN useradd --create-home --shell /bin/bash worker
-WORKDIR /home/worker/app
-COPY . /home/worker/app
+WORKDIR /home/pdfmerger/app
+COPY . /home/pdfmerger/app
 
 # Install requirements
 RUN pip install -r requirements.txt
@@ -18,6 +18,6 @@ RUN pip install -e .
 
 # Run commands as non-root user
 RUN chown worker:worker -R /home/worker
+RUN mkdir /home/pdfmerger/data
 USER worker
-
-ENTRYPOINT ["pdfmerger"]
+ENTRYPOINT ["/bin/bash"]
