@@ -29,7 +29,7 @@ northwestwitch/pdfmerger --orientation landscape \
 ```
 
 ## Installing the program locally
-Requires python>=3.6.
+Requires python>=3.8.
 
 Clone this repository with the command:
 ```
@@ -61,7 +61,7 @@ Options:
 
 Example:
 ```
-pdfmerge --orientation landscape -f infile1.pdf -f infile2.pdf .. --add-filenames (--outfolder outfolder --outfile outfile.pdf)
+pdfmerger --orientation landscape -f infile1.pdf -f infile2.pdf .. --write-filenames (--outfolder outfolder --outfile outfile.pdf)
 ```
 
 The demo folder contains [3 test files](https://github.com/northwestwitch/pdfmerger/tree/master/pdfmerger/demo) that you could test the program with.
